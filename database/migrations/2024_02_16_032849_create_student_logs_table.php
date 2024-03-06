@@ -12,8 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('student_logs', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('student_id');
+            $table->string('grade');
+            $table->string('section');
+            $table->string('checked_in');
+            $table->string('checked_out')->nullable();
+            $table->string('date_created');
         });
     }
 

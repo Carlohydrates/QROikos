@@ -1,0 +1,167 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+main{
+    min-height:100vh;
+}
+.background-container{
+    position:absolute;
+    height:100vh;
+    width:100%;
+    display:flex;
+    justify-content: end;
+}
+.right-content{
+    width:50%;
+    overflow:hidden;
+}
+.circle{
+    min-width:75em;
+    min-height:75em;
+    transform:translateY(-5rem) translateX(5rem);
+    background-color: #9bdff8;
+    border-top-left-radius:50%;
+    border-bottom-left-radius:50%;
+}
+.circles{
+    position:absolute;
+    background-color:#9bdff8;
+    border-radius:50%;
+    width:1.9rem;
+    height:1.9rem;
+    top:4rem;
+}
+.circles2{
+    position:absolute;
+    background-color:#ffbd59;
+    border-radius:50%;
+    transform:translateX(10rem);
+    width:1.9rem;
+    height:1.9rem;
+    top:2rem;
+}
+.circles3{
+    position:absolute;
+    background-color:#ffbd59;
+    border-radius:50%;
+    width:1.9rem;
+    height:1.9rem;
+    bottom:10rem;
+}
+.circles4{
+    position:absolute;
+    background-color:#9bdff8;
+    border-radius:50%;
+    transform:translateX(3rem);
+    width:1.9rem;
+    height:1.9rem;
+    bottom:5rem;
+}
+.fa-clock{
+    position:absolute;
+    color:#123664;
+    top:10rem;
+    transform: rotate(20deg);
+    font-size:15rem;
+}
+.fa-pencil-alt{
+    position:absolute;
+    color:#123664;
+    bottom:10rem;
+    transform: rotate(-110deg);
+    font-size:12rem;
+}
+.greeting-container{
+    min-height:100vh;
+    padding:2.5rem;
+    display:flex;
+    flex-direction:column;
+}
+header{
+    display:flex;
+    align-items: center;
+}
+#reader{
+    margin-top:2rem;
+    margin-left:1rem;
+}
+.user-content{
+    margin-top:15%;
+    margin-left:1rem;
+}
+.user-content h1{
+    font-size:5rem;
+}
+.user-content h3{
+    margin-left:.5rem;
+    font-size:1.5rem;
+    color:#9bdff8
+}
+.btn{
+    margin-left:.5rem;
+    padding:.5rem .5rem;
+    color:white;
+    background-color:#123664;
+    border:none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+@media screen and (max-width:1024px) {
+    .circle{
+        min-width:75em;
+        min-height:75em;
+        transform:translateY(-7rem) translateX(1rem);
+    }
+    .circles{
+        position:absolute;
+        background-color:#9bdff8;
+        border-radius:50%;
+        width:1.9rem;
+        height:1.9rem;
+        top:4rem;
+    }
+    .circles2{
+        position:absolute;
+        background-color:#ffbd59;
+        border-radius:50%;
+        transform:translateX(10rem);
+        width:1.9rem;
+        height:1.9rem;
+        top:2rem;
+    }
+    .circles3{
+        position:absolute;
+        background-color:#ffbd59;
+        border-radius:50%;
+        width:1.9rem;
+        height:1.9rem;
+        bottom:10rem;
+    }
+    .circles4{
+        position:absolute;
+        background-color:#9bdff8;
+        border-radius:50%;
+        transform:translateX(3rem);
+        width:1.9rem;
+        height:1.9rem;
+        bottom:5rem;
+    }
+    .fa-clock{
+        position:absolute;
+        color:#123664;
+        top:10rem;
+        transform: rotate(20deg);
+        font-size:15rem;
+    }
+    .fa-pencil-alt{
+        position:absolute;
+        color:#123664;
+        bottom:10rem;
+        transform: rotate(-95deg);
+        font-size:12rem;
+    }
+}
