@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('role');
             $table->string('checked_in');
             $table->string('checked_out')->nullable();
+            $table->string('date_created');
         });
     }
 

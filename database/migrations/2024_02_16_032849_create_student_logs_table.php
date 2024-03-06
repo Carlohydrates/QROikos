@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('section');
             $table->string('checked_in');
             $table->string('checked_out')->nullable();
+            $table->string('date_created');
         });
     }
 

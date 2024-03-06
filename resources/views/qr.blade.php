@@ -51,21 +51,21 @@
             .then(response=>response.json())
             .then(data=>{
                 if(data.success){
+                    console.log(data.message);
                     const reader=document.getElementById('reader');
                     const userInfo=data.content;
                     const userContent=document.querySelector('.user-content');
                     reader.hidden=true;
                     userContent.querySelector('h1').textContent="Welcome Home";
-                    userContent.querySelector('h3').textContent=userInfo[0].fname.toUpperCase() +" "+userInfo[0].lname.toUpperCase();
-                    userContent.querySelector('h4').textContent="Clocked-In On "+data.clocked;
-                }
-                else{
-                    console.log("No user found");
+                    userContent.querySelector('h3').textContent=userInfo.fname.toUpperCase() +" "+userInfo.lname.toUpperCase();
+                    userContent.querySelector('h4').textContent=data.message;
+                    return;
                 }
             })
             .catch(error=>{
                 console.log("Error logging in user ",error);
             })
+            hasScanned=true;
         }
         function onScanSuccess(decodedText,decodeResult){
             if(!hasScanned){
@@ -76,7 +76,7 @@
             }
         }
         var html5QrcodeScanner = new Html5QrcodeScanner(
-            "reader", { fps: 30, qrbox: 250 }
+            "reader", { fps: 5, qrbox: 250 }
         );
         html5QrcodeScanner.render(onScanSuccess);
     </script>
