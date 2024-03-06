@@ -33,6 +33,7 @@
                 <h1></h1>
                 <h3></h3>
                 <h4 style="margin-left:.5rem;margin-top:3rem;font-size:1rem"></h4>
+                <button class='btn' style="position:absolute" onclick="location.reload()" hidden>Scan Again</button>
             </div>
         </div>
     </main>
@@ -52,14 +53,20 @@
             .then(data=>{
                 if(data.success){
                     console.log(data.message);
+                    if(data.message==="You have already clocked out"){
+                        alert('You have already clocked out');
+                        return;
+                    }
                     const reader=document.getElementById('reader');
                     const userInfo=data.content;
                     const userContent=document.querySelector('.user-content');
+                    const button=document.querySelector('.btn');
                     reader.hidden=true;
-                    userContent.querySelector('h1').textContent="Welcome Home";
+                    userContent.querySelector('h1').textContent=data.message[1];
                     userContent.querySelector('h3').textContent=userInfo.fname.toUpperCase() +" "+userInfo.lname.toUpperCase();
-                    userContent.querySelector('h4').textContent=data.message;
-                    return;
+                    userContent.querySelector('h4').textContent=data.message[0];
+                    button.style.position="relative";
+                    button.hidden=false;
                 }
             })
             .catch(error=>{

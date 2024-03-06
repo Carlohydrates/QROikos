@@ -51,7 +51,7 @@ class CheckInOutController extends Controller
             ->update([
                 'checked_out'=>date('H:i')
             ]);
-            return "Clocked-Out On ".date('H:i');
+            return ["Clocked-Out On ".date('H:i'),"Goodbye"];
         }
         StudentLogs::create([
             'student_id'=>$s_i->student_id,
@@ -60,7 +60,7 @@ class CheckInOutController extends Controller
             'checked_in'=>date('H:i'),
             'date_created'=>date('Y-d-m')
         ]);
-        return "Clocked-In On ".date('H:i');
+        return ["Clocked-In On ".date('H:i'),"Welcome Home"];
     }
     private function handleEmployeeCheckEvent($e_i){
         date_default_timezone_set('Asia/Manila');
@@ -79,7 +79,7 @@ class CheckInOutController extends Controller
             ->update([
                 'checked_out'=>date('H:i')
             ]);
-            return "Clocked-Out On ".date('H:i');
+            return ["Clocked-Out On ".date('H:i'),"Goodbye"];
         }
         EmployeeLogs::create([
             'employee_id'=>$e_i->employee_id,
@@ -87,6 +87,6 @@ class CheckInOutController extends Controller
             'checked_in'=>date('H:i'),
             'date_created'=>date('Y-d-m')
         ]);
-        return "Clocked-In On ".date('H:i');
+        return ["Clocked-In On ".date('H:i'),"Welcome Home"];
     }
 }
