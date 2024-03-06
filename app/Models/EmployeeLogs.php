@@ -12,6 +12,7 @@ class EmployeeLogs extends Model
         'employee_id',
         'role',
         'checked_in',
+        'date_created'
     ];
     public $timestamps=false;
 }

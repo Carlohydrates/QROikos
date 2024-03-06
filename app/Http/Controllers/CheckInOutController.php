@@ -67,7 +67,7 @@ class CheckInOutController extends Controller
         $employee_log=EmployeeLogs::where('employee_id',$e_i->employee_id)
         ->where('date_created',date('Y-d-m'))
         ->first();
-        $employee_log_out=StudentLogs::where('employee_id',$e_i->employee_id)
+        $employee_log_out=EmployeeLogs::where('employee_id',$e_i->employee_id)
         ->where('date_created',date('Y-d-m'))
         ->whereNotNull('checked_out')
         ->first();
@@ -79,11 +79,11 @@ class CheckInOutController extends Controller
             ->update([
                 'checked_out'=>date('H:i')
             ]);
-            return ["Clocked-Out On ".date('H:i'),"Goodbye"];
+            return "Clocked-Out On ".date('H:i');
         }
         EmployeeLogs::create([
             'employee_id'=>$e_i->employee_id,
-            'role'=>$e_i->role,
+            'role'=>$e_i->position,
             'checked_in'=>date('H:i'),
             'date_created'=>date('Y-d-m')
         ]);

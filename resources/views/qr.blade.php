@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{csrf_token()}}">
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>QR System</title>
 </head>
@@ -37,7 +38,6 @@
             </div>
         </div>
     </main>
-    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <script>
         const csrf=document.querySelector("meta[name='csrf-token']");
         var hasScanned=false;
@@ -67,7 +67,9 @@
                     userContent.querySelector('h4').textContent=data.message[0];
                     button.style.position="relative";
                     button.hidden=false;
+                    return;
                 }
+                console.log("Employee or Student does not exsist");
             })
             .catch(error=>{
                 console.log("Error logging in user ",error);
