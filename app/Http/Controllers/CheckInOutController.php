@@ -79,7 +79,7 @@ class CheckInOutController extends Controller
             ->update([
                 'checked_out'=>date('H:i')
             ]);
-            return "Clocked-Out On ".date('H:i');
+            return ["Clocked-Out On ".date('H:i'),"Goodbye"];
         }
         EmployeeLogs::create([
             'employee_id'=>$e_i->employee_id,

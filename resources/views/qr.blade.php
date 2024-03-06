@@ -52,7 +52,6 @@
             .then(response=>response.json())
             .then(data=>{
                 if(data.success){
-                    console.log(data.message);
                     if(data.message==="You have already clocked out"){
                         alert('You have already clocked out');
                         return;
@@ -69,7 +68,7 @@
                     button.hidden=false;
                     return;
                 }
-                console.log("Employee or Student does not exsist");
+                alert("Employee or Student does not exsist");
             })
             .catch(error=>{
                 console.log("Error logging in user ",error);
